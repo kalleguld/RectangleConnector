@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RectangleConnectorApp", "RectangleConnectorApp\RectangleConnectorApp.csproj", "{D484DE7E-36F6-420E-9710-98CA7EBF3BDD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RectangleConnector.View", "RectangleConnector.View\RectangleConnector.View.csproj", "{5C10EFF7-5E24-48BC-AC92-B110358DB0CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RectangleConnector.ViewModel", "RectangleConnector.ViewModel\RectangleConnector.ViewModel.csproj", "{ACC18AFD-D338-43C5-AC02-D710CA8DE88D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{D484DE7E-36F6-420E-9710-98CA7EBF3BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D484DE7E-36F6-420E-9710-98CA7EBF3BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D484DE7E-36F6-420E-9710-98CA7EBF3BDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C10EFF7-5E24-48BC-AC92-B110358DB0CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C10EFF7-5E24-48BC-AC92-B110358DB0CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C10EFF7-5E24-48BC-AC92-B110358DB0CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C10EFF7-5E24-48BC-AC92-B110358DB0CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACC18AFD-D338-43C5-AC02-D710CA8DE88D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACC18AFD-D338-43C5-AC02-D710CA8DE88D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACC18AFD-D338-43C5-AC02-D710CA8DE88D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACC18AFD-D338-43C5-AC02-D710CA8DE88D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -95,6 +95,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RectangleConnector.ViewModel\RectangleConnector.ViewModel.csproj">
+      <Project>{acc18afd-d338-43c5-ac02-d710ca8de88d}</Project>
+      <Name>RectangleConnector.ViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RectangleConnector.View\RectangleConnector.View.csproj">
+      <Project>{5c10eff7-5e24-48bc-ac92-b110358db0cc}</Project>
+      <Name>RectangleConnector.View</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

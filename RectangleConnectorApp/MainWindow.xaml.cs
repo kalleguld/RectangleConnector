@@ -1,17 +1,7 @@
-﻿using System;
+﻿using RectangleConnector.ViewModel;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace RectangleConnectorApp
 {
@@ -22,6 +12,18 @@ namespace RectangleConnectorApp
     {
         public MainWindow()
         {
+            DataContext = new RectangleConnector.ViewModel.ViewModel(
+                new RectanglePane(new List<Rectangle>
+                {
+                    new Rectangle(new Coordinate(100,100), new Coordinate(150,150), Color.Black),
+                    new Rectangle(new Coordinate(50,50), new Coordinate(100,175), Color.Blue),
+
+                }),
+                new RectanglePane(new List<Rectangle>
+                {
+                        new Rectangle(new Coordinate(30,60), new Coordinate(60,300), Color.Red),
+                }));
+
             InitializeComponent();
         }
     }

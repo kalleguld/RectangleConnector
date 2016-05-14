@@ -13,5 +13,6 @@ namespace RectangleConnectorApp
     /// </summary>
     public partial class App : Application
     {
+        
     }
 }
