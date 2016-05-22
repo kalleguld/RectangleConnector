@@ -11,10 +11,16 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
+                <ColumnDefinition Width="5"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <local:RectanglePaneView Grid.Column="0" DataContext="{Binding LeftPane}"/>
-            <local:RectanglePaneView Grid.Column="1" DataContext="{Binding RightPane}"/>
+            <local:RectanglePaneView Grid.Column="0" 
+                                     DataContext="{Binding LeftPane}" 
+                                     Background="AliceBlue"/>
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <local:RectanglePaneView Grid.Column="2" 
+                                     DataContext="{Binding RightPane}" 
+                                     Background="Beige"/>
         </Grid>
     </UserControl.Content>
 </UserControl>

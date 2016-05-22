@@ -13,7 +13,7 @@
         <ItemsControl ItemsSource="{Binding Rectangles}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <Canvas Background="AliceBlue" Height="300" Width="300"/>
+                    <Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemContainerStyle>
