@@ -27,9 +27,14 @@
                 <DataTemplate>
                     <Rectangle Height="{Binding Geometry.Height}"
                                Width="{Binding Geometry.Width}"
-                               Canvas.Left="{Binding Geometry.Left}"
-                               Canvas.Top="{Binding Geometry.Top}"
                                Fill="{Binding Brush}"
+                               MouseLeftButtonDown="Rectangle_OnMouseLeftButtonDown"
+                               MouseMove="Rectangle_OnMouseMove"
+                               AllowDrop="True"
+                               DragEnter="Rectangle_OnDragEnter"
+                               DragOver="Rectangle_OnDragOver"
+                               DragLeave="Rectangle_OnDragEnter"
+                               Drop="Rectangle_OnDrop"
                                />
                 </DataTemplate>
             </ItemsControl.ItemTemplate>

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:RectangleConnector.View"
              xmlns:viewmodel="clr-namespace:RectangleConnector.ViewModel;assembly=RectangleConnector.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="600"  d:DataContext="{d:DesignInstance viewmodel:ViewModel}">
+             d:DesignHeight="600" d:DesignWidth="600"  d:DataContext="{d:DesignInstance viewmodel:MainViewModel}">
     <UserControl.Content>
         <Grid>
             <Grid.ColumnDefinitions>

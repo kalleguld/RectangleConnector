@@ -16,7 +16,7 @@ namespace RectangleConnector.ViewModel
 
         public RectanglePane(IEnumerable<DTO.Rectangle> rs)
         {
-            Rectangles = new ObservableCollection<Rectangle>(rs.Select(r => new Rectangle(r)));
+            Rectangles = new ObservableCollection<Rectangle>(rs.Select(r => new VM.Rectangle(r, rs)));
         }
 
     }

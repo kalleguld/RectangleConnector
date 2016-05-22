@@ -8,7 +8,7 @@ namespace RectangleConnectorApp
     {
         public MainWindow()
         {
-            DataContext = new RectangleConnector.ViewModel.ViewModel(
+            DataContext = new RectangleConnector.ViewModel.MainViewModel(
                 new List<Rectangle>
                 {
                     new Rectangle(new Coordinate(100,100), new Coordinate(150,150), Color.Black),
