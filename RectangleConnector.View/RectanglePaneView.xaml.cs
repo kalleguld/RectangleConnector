@@ -21,5 +21,6 @@ namespace RectangleConnector.View
         {
             InitializeComponent();
         }
+
     }
 }

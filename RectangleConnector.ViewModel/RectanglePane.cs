@@ -1,21 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
+using RectangleConnector.ViewModel.DTO;
+using RectangleConnector.ViewModel.VM;
+using Rectangle = RectangleConnector.ViewModel.VM.Rectangle;
 
 namespace RectangleConnector.ViewModel
 {
     public class RectanglePane
     {
-        public ObservableCollection<Rectangle> Rectangles { get; set; }
+        public ObservableCollection<Rectangle> Rectangles { get; }
 
-        public RectanglePane() : this(Enumerable.Empty<Rectangle>()) { }
+        public RectanglePane() : this(Enumerable.Empty<DTO.Rectangle>()) { }
 
-        public RectanglePane(IEnumerable<Rectangle> rs)
+        public RectanglePane(IEnumerable<DTO.Rectangle> rs)
         {
-            Rectangles = new ObservableCollection<Rectangle>(rs);
+            Rectangles = new ObservableCollection<Rectangle>(rs.Select(r => new Rectangle(r)));
         }
+
     }
 }

@@ -8,7 +8,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" d:DataContext="{d:DesignInstance viewmodel:RectanglePane}">
     <UserControl.Resources>
-        <local:ColorConverter x:Key="colorConverter"/>
     </UserControl.Resources>
     <UserControl.Content>
         <ItemsControl ItemsSource="{Binding Rectangles}">
@@ -19,17 +18,18 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemContainerStyle>
                 <Style TargetType="ContentPresenter">
-                    <Setter Property="Canvas.Left" Value="{Binding Left}"/>
-                    <Setter Property="Canvas.Top" Value="{Binding Top}"/>
+                    <Setter Property="Canvas.Left" Value="{Binding Geometry.Left}" />
+                    <Setter Property="Canvas.Top" Value="{Binding Geometry.Top}" />
                 </Style>
             </ItemsControl.ItemContainerStyle>
+
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Rectangle Height="{Binding Height}"
-                               Width="{Binding Width}"
-                               Canvas.Left="{Binding Left}"
-                               Canvas.Top="{Binding Top}"
-                               Fill="{Binding Color, Converter={StaticResource colorConverter}}"
+                    <Rectangle Height="{Binding Geometry.Height}"
+                               Width="{Binding Geometry.Width}"
+                               Canvas.Left="{Binding Geometry.Left}"
+                               Canvas.Top="{Binding Geometry.Top}"
+                               Fill="{Binding Brush}"
                                />
                 </DataTemplate>
             </ItemsControl.ItemTemplate>

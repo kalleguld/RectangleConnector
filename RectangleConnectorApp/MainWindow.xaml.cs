@@ -1,28 +1,24 @@
-﻿using RectangleConnector.ViewModel;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 using System.Windows;
+using RectangleConnector.ViewModel.DTO;
 
 namespace RectangleConnectorApp
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             DataContext = new RectangleConnector.ViewModel.ViewModel(
-                new RectanglePane(new List<Rectangle>
+                new List<Rectangle>
                 {
                     new Rectangle(new Coordinate(100,100), new Coordinate(150,150), Color.Black),
                     new Rectangle(new Coordinate(50,50), new Coordinate(100,175), Color.Blue),
 
-                }),
-                new RectanglePane(new List<Rectangle>
+                },
+                new List<Rectangle>
                 {
                         new Rectangle(new Coordinate(30,60), new Coordinate(60,300), Color.Red),
-                }));
+                });
 
             InitializeComponent();
         }
