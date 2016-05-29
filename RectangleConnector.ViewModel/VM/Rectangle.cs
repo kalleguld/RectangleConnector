@@ -18,6 +18,17 @@ namespace RectangleConnector.ViewModel.VM
         private Vector _offset;
         private Rect _geometry;
         private Brush _brush;
+        private Point _center;
+
+        public Point Center
+        {
+            get { return _center; }
+            private set
+            {
+                _center = value;
+                RaisePropertyChanged();
+            }
+        }
 
         public Vector Offset
         {
@@ -36,8 +47,16 @@ namespace RectangleConnector.ViewModel.VM
             private set
             {
                 _geometry = value;
+                RecalculateCenter();
                 RaisePropertyChanged();
             }
+        }
+
+        private void RecalculateCenter()
+        {
+            Center = new Point(
+                Geometry.X + (Geometry.Width / 2),
+                Geometry.Y + (Geometry.Height / 2));
         }
 
         public Brush Brush
@@ -49,6 +68,8 @@ namespace RectangleConnector.ViewModel.VM
                 RaisePropertyChanged();
             }
         }
+
+        public ObservableCollection<VM.Rectangle> ConnectedRectangles { get; } = new ObservableCollection<Rectangle>();
 
         public DTO.Rectangle RectangleDto { get; }
 
@@ -89,6 +110,7 @@ namespace RectangleConnector.ViewModel.VM
             if (RectangleDto.ConnectedRectangles.Add(r.RectangleDto))
             {
                 r.Connect(this);
+                ConnectedRectangles.Add(r);
                 OnConnectionsUpdated();
             }
         }

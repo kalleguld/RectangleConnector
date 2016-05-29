@@ -65,19 +65,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RectanglePaneView.xaml.cs">
-      <DependentUpon>RectanglePaneView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl.xaml.cs">
-      <DependentUpon>UserControl.xaml</DependentUpon>
+    <Compile Include="RectangleConnectionControl.xaml.cs">
+      <DependentUpon>RectangleConnectionControl.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="RectanglePaneView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControl.xaml">
+    <Page Include="RectangleConnectionControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

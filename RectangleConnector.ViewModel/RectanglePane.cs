@@ -77,13 +77,19 @@ namespace RectangleConnector.ViewModel
         {
             if (e.Action == NotifyCollectionChangedAction.Move) return;
 
-            foreach (VM.Rectangle rectangle in e.NewItems)
+            if (e.OldItems != null)
             {
-                rectangle.PropertyChanged += Rectangle_PropertyChanged;
+                foreach (Rectangle rectangle in e.OldItems)
+                {
+                    rectangle.PropertyChanged -= Rectangle_PropertyChanged;
+                }
             }
-            foreach (VM.Rectangle rectangle in e.OldItems)
+            if (e.NewItems != null)
             {
-                rectangle.PropertyChanged -= Rectangle_PropertyChanged;
+                foreach (Rectangle rectangle in e.NewItems)
+                {
+                    rectangle.PropertyChanged += Rectangle_PropertyChanged;
+                }
             }
             ResetGeometry();
         }

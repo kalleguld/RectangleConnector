@@ -15,15 +15,12 @@ using System.Windows.Shapes;
 
 namespace RectangleConnector.View
 {
-    /// <summary>
-    /// Interaction logic for UserControl.xaml
-    /// </summary>
-    public partial class UserControl : System.Windows.Controls.UserControl
+    public partial class RectangleConnectionControl : System.Windows.Controls.UserControl
     {
 
         private Point _dragStartPoint;
 
-        public UserControl()
+        public RectangleConnectionControl()
         {
             InitializeComponent();
         }
