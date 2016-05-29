@@ -1,30 +1,72 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 using GalaSoft.MvvmLight;
+using RectangleConnector.ViewModel.DTO;
+using Color = System.Windows.Media.Color;
 
 namespace RectangleConnector.ViewModel.VM
 {
     public class Rectangle : ObservableObject
     {
 
-        private readonly IEnumerable<DTO.Rectangle> _unconnectableRectangles;
-        
-        public Rect Geometry { get; }
-        public Brush Brush { get; private set; }
+        private readonly IReadOnlyCollection<DTO.Rectangle> _unconnectableRectangles;
+
+        private Vector _offset;
+        private Rect _geometry;
+        private Brush _brush;
+
+        public Vector Offset
+        {
+            get { return _offset; }
+            set
+            {
+                _offset = value;
+                Geometry = GetGeometry(RectangleDto, _offset);
+                RaisePropertyChanged();
+            }
+        }
+
+        public Rect Geometry
+        {
+            get { return _geometry; }
+            private set
+            {
+                _geometry = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public Brush Brush
+        {
+            get { return _brush; }
+            private set
+            {
+                _brush = value;
+                RaisePropertyChanged();
+            }
+        }
 
         public DTO.Rectangle RectangleDto { get; }
 
-        public Rectangle(DTO.Rectangle r, IEnumerable<DTO.Rectangle> unconnectableRectangles)
+
+        public Rectangle(DTO.Rectangle r, Vector offset, IReadOnlyCollection<DTO.Rectangle> unconnectableRectangles)
         {
             RectangleDto = r;
             _unconnectableRectangles = unconnectableRectangles;
-            var topLeft = new Point(r.TopLeft.X, r.TopLeft.Y);
-            var bottomRight = new Point(r.BottomRight.X, r.BottomRight.Y);
-            Geometry = new Rect(topLeft, bottomRight);
+            Geometry = GetGeometry(r, offset);
             Brush = GetBrush();
+        }
+
+        private static Rect GetGeometry(DTO.Rectangle rectangleDto, Vector offset)
+        {
+            var topLeft = new Point(rectangleDto.TopLeft.X + offset.X, rectangleDto.TopLeft.Y + offset.Y);
+            var bottomRight = new Point(rectangleDto.BottomRight.X + offset.X, rectangleDto.BottomRight.Y + offset.Y);
+            var geometry = new Rect(topLeft, bottomRight);
+            return geometry;
         }
 
         private static Color ConvertColor(DTO.Color c)
@@ -54,7 +96,6 @@ namespace RectangleConnector.ViewModel.VM
         private void OnConnectionsUpdated()
         {
             Brush = GetBrush();
-            RaisePropertyChanged(() => Brush);
         }
 
         private Brush GetBrush()
